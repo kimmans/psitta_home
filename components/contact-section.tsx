@@ -44,7 +44,7 @@ export default function ContactSection() {
               <span className="text-[#7FD67F]">농업의 미래</span>
             </h2>
             <p className="text-white/55 text-base lg:text-lg leading-relaxed mb-12">
-              농업 AI, 스마트팜 교육, 연구 협력 등
+              농업 AI, 스마트팜 교육, 강의, 연구 협력 등
               어떤 주제든 편하게 문의해 주세요.
             </p>
 

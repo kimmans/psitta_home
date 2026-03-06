@@ -5,8 +5,11 @@ import ServicesSection from "@/components/services-section";
 import ResearchSection from "@/components/research-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import { getAllPosts } from "@/lib/research";
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <>
       <Header />
@@ -14,7 +17,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
-        <ResearchSection />
+        <ResearchSection posts={latestPosts} />
         <ContactSection />
       </main>
       <Footer />

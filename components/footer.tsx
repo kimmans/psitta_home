@@ -1,6 +1,7 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 const navSections = [
   {
@@ -40,18 +41,14 @@ export default function Footer() {
           {/* Col 1: Logo + Slogan */}
           <div className="space-y-5">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[#7FD67F] flex items-center justify-center flex-shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8 2 5 5 5 9c0 2.5 1.2 4.7 3 6.1V20h8v-4.9c1.8-1.4 3-3.6 3-6.1 0-4-3-7-7-7z" fill="#0D1B2A"/>
-                  <circle cx="9.5" cy="9.5" r="1" fill="#0D1B2A"/>
-                  <path d="M12 2c1.5 0 2.8.5 3.8 1.4" stroke="#0D1B2A" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
+              <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
+                <Image src="/logo.png" alt="Psitta" width={28} height={28} className="object-contain" />
               </div>
               <span className="text-white font-bold text-xl tracking-tight">Psitta</span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              농업의 언어를 AI로 번역합니다.<br />
-              데이터와 지능으로 농업의 미래를 설계합니다.
+              농업, AI, 교육<br />
+              AI와 교육으로 농업의 미래를 설계합니다.
             </p>
             <p className="text-white/25 text-xs">
               Psittacus Intelligence Co., Ltd.
@@ -98,7 +95,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-1">
             <span className="text-white/20 text-xs">사업자등록번호: 338-41-00999</span>
-            <span className="text-white/20 text-xs">서울특별시 영등포구 문래동</span>
+            <span className="text-white/20 text-xs">서울특별시 영등포구 양평동</span>
           </div>
         </div>
       </div>

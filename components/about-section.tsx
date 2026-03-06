@@ -107,7 +107,7 @@ export default function AboutSection() {
                 <span className="text-[#0D1B2A] font-bold text-lg mt-0.5">Intelligence</span>
                 <div>
                   <p className="text-[#0D1B2A] font-semibold text-sm">Artificial Intelligence</p>
-                  <p className="text-[#1C1C1E]/60 text-sm">Learning</p>
+                  <p className="text-[#1C1C1E]/60 text-sm">Education & Sustainability</p>
                 </div>
               </div>
             </motion.div>

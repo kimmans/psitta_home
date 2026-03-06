@@ -200,7 +200,7 @@ export default function HeroSection() {
         >
           Psitta는 인공지능과 교육으로
           <br className="hidden sm:block" />
-          농업의 미래를 설계합니다
+           농업의 미래를 설계합니다
         </motion.p>
 
         {/* CTA */}
@@ -237,10 +237,9 @@ export default function HeroSection() {
           className="mt-16 flex flex-wrap gap-8 justify-center"
         >
           {[
-            { label: "-", value: "농업용 SLLM 모델 개발" },
+            { label: "-", value: "농업용 Vision Model 개발" },
             { label: "-", value: "AI 스마트팜 키트 & 교육" },
-            { label: "-", value: "데이터 분석 & 컨설팅" },
-            { label: "-", value: "계량분석 연구" },
+            { label: "-", value: "데이터 분석 & 컨설팅" }
           ].map((item, i) => (
             <div key={i} className="text-center">
               <div className="text-2xl font-bold text-[#7FD67F]">{item.value}</div>

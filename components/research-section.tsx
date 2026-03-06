@@ -2,27 +2,25 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { BookOpen, Award, Presentation, Clock } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import type { PostMeta } from "@/lib/research-config";
+import { categoryColors } from "@/lib/research-config";
 
-const timelineItems = [
-  {
-    icon: BookOpen,
-    label: "논문 발표",
-    placeholder: "연구 논문을 준비 중입니다",
-  },
-  {
-    icon: Award,
-    label: "수상 이력",
-    placeholder: "수상 이력을 준비 중입니다",
-  },
-  {
-    icon: Presentation,
-    label: "학술 발표",
-    placeholder: "학술 발표 이력을 준비 중입니다",
-  },
-];
+interface Props {
+  posts: PostMeta[];
+}
 
-export default function ResearchSection() {
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+export default function ResearchSection({ posts }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-80px" });
 
@@ -32,7 +30,8 @@ export default function ResearchSection() {
       ref={sectionRef}
       className="py-24 lg:py-36 bg-[#F5F4F0] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+
         {/* Section label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,125 +41,103 @@ export default function ResearchSection() {
         >
           <span className="w-8 h-0.5 bg-[#7FD67F]" />
           <span className="text-[#7FD67F] text-sm font-semibold tracking-[0.2em] uppercase">
-            Research
+            Research & Learn
           </span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Header */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.1, duration: 0.7 }}
-          >
-            <h2 className="text-3xl lg:text-5xl font-bold text-[#0D1B2A] leading-tight mb-6">
-              데이터로 증명하는
-              <br />
-              <span className="text-[#7FD67F]">연구 성과</span>
+        {/* Heading row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12"
+        >
+          <div>
+            <h2 className="text-3xl lg:text-5xl font-bold text-[#0D1B2A] leading-tight mb-3">
+              Research & Learn
             </h2>
-            <p className="text-[#1C1C1E]/60 text-base lg:text-lg leading-relaxed mb-8">
-              프시타는 현장 경험과 학술 연구를 연결합니다.
-              논문, 수상, 학술 발표를 통해 검증된 기술과 방법론을 제공합니다.
+            <p className="text-[#1C1C1E]/55 text-base lg:text-lg max-w-xl leading-relaxed">
+              농업 AI, 스마트팜, 계량분석 분야의 연구 결과와 논문 리뷰를 공유합니다.
             </p>
-
-            {/* Preparing notice */}
-            <div
-              className="inline-flex items-center gap-3 px-5 py-3 rounded-full border"
-              style={{
-                background: "rgba(127,214,127,0.08)",
-                borderColor: "rgba(127,214,127,0.25)",
-              }}
-            >
-              <Clock size={16} className="text-[#7FD67F]" />
-              <span className="text-[#1A3A2A] font-semibold text-sm">
-                연구 성과를 준비 중입니다
-              </span>
-            </div>
-
-            {/* Research focus areas */}
-            <div className="mt-10 grid grid-cols-2 gap-4">
-              {[
-                { area: "농업 경제학", desc: "비시장 가치 평가" },
-                { area: "머신러닝", desc: "작물 생육 예측" },
-                { area: "IoT 시스템", desc: "스마트팜 센서" },
-                { area: "데이터 사이언스", desc: "농업 데이터 분석" },
-              ].map((item) => (
-                <div
-                  key={item.area}
-                  className="p-4 rounded-xl bg-white border border-[#0D1B2A]/8 shadow-sm"
-                >
-                  <p className="text-[#0D1B2A] font-semibold text-sm">{item.area}</p>
-                  <p className="text-[#1C1C1E]/50 text-xs mt-0.5">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right: Timeline placeholder */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="relative"
+          </div>
+          <Link
+            href="/research"
+            className="group inline-flex items-center gap-2 text-[#0D1B2A] font-semibold text-sm hover:text-[#1A6B3A] transition-colors whitespace-nowrap"
           >
-            {/* Vertical timeline line */}
-            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7FD67F]/40 via-[#7FD67F]/20 to-transparent" />
+            모든 글 보기
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
 
-            <div className="space-y-8">
-              {timelineItems.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
-                    className="flex gap-6 group"
-                  >
-                    {/* Node */}
-                    <div className="relative flex-shrink-0 w-10 h-10 rounded-full border-2 border-[#7FD67F]/30 bg-[#F5F4F0] flex items-center justify-center z-10 group-hover:border-[#7FD67F] group-hover:bg-[#7FD67F]/10 transition-all">
-                      <Icon size={16} className="text-[#7FD67F]/60 group-hover:text-[#7FD67F] transition-colors" />
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 pb-2">
-                      <p className="text-xs font-semibold text-[#7FD67F] tracking-wider uppercase mb-1">
-                        {item.label}
-                      </p>
-                      <div className="p-4 rounded-xl border border-dashed border-[#0D1B2A]/15 bg-white/60">
-                        <p className="text-[#1C1C1E]/40 text-sm italic">
-                          {item.placeholder}
-                        </p>
-                        {/* Skeleton lines */}
-                        <div className="mt-3 space-y-2">
-                          <div className="h-2 bg-[#0D1B2A]/6 rounded-full w-3/4 animate-pulse" />
-                          <div className="h-2 bg-[#0D1B2A]/6 rounded-full w-1/2 animate-pulse" />
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-
-              {/* Coming soon block */}
+        {/* Post list */}
+        {posts.length === 0 ? (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.2 }}
+            className="text-[#1C1C1E]/40 text-sm"
+          >
+            아직 게시된 글이 없습니다.
+          </motion.p>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="border-t border-[#0D1B2A]/10"
+          >
+            {posts.map((post, i) => (
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="flex gap-6"
+                key={post.slug}
+                custom={i}
+                variants={fadeUp}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
               >
-                <div className="relative flex-shrink-0 w-10 h-10 rounded-full border-2 border-[#7FD67F] bg-[#7FD67F]/10 flex items-center justify-center z-10">
-                  <span className="w-2 h-2 rounded-full bg-[#7FD67F] animate-pulse" />
-                </div>
-                <div className="flex-1 flex items-center">
-                  <p className="shimmer-text font-bold text-base">
-                    연구 성과 발표 예정
-                  </p>
-                </div>
+                <Link
+                  href={`/research/${post.slug}`}
+                  className="group flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-8 py-6 border-b border-[#0D1B2A]/10 hover:bg-white/60 -mx-4 px-4 rounded-lg transition-colors"
+                >
+                  <span className="text-[#1C1C1E]/35 text-sm tabular-nums whitespace-nowrap pt-0.5 sm:w-20 flex-shrink-0">
+                    {post.displayDate}
+                  </span>
+                  <span className={`text-xs font-semibold px-2.5 py-1 rounded-full self-start sm:w-24 text-center flex-shrink-0 ${categoryColors[post.category]}`}>
+                    {post.category}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[#0D1B2A] font-semibold text-base group-hover:text-[#1A6B3A] transition-colors leading-snug mb-1">
+                      {post.title}
+                    </p>
+                    <p className="text-[#1C1C1E]/50 text-sm leading-relaxed line-clamp-2">
+                      {post.description}
+                    </p>
+                  </div>
+                  <ArrowUpRight
+                    size={16}
+                    className="text-[#0D1B2A]/25 group-hover:text-[#7FD67F] transition-colors flex-shrink-0 mt-1 hidden sm:block"
+                  />
+                </Link>
               </motion.div>
-            </div>
+            ))}
           </motion.div>
-        </div>
+        )}
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="mt-10 flex justify-center"
+        >
+          <Link
+            href="/research"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#0D1B2A]/15 bg-white hover:bg-[#0D1B2A] hover:border-[#0D1B2A] text-[#0D1B2A] hover:text-white font-semibold text-sm transition-all"
+          >
+            전체 글 보기
+            <ArrowUpRight size={14} className="group-hover:text-[#7FD67F] transition-colors" />
+          </Link>
+        </motion.div>
+
       </div>
     </section>
   );
