@@ -198,7 +198,7 @@ export default function HeroSection() {
           animate="visible"
           className="text-lg sm:text-xl lg:text-2xl text-white/60 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Psitta는 인공지능과 교육으로{" "}
+          Psitta는 AI와 교육으로{" "}
           <br className="hidden sm:block" />
           농업의 미래를 설계합니다
         </motion.p>
