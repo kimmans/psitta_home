@@ -59,11 +59,11 @@ export default function Footer() {
 
             {/* Social / contact link */}
             <a
-              href="mailto:contact@psitta.ai"
+              href="mailto:jmhanmu@gmail.com"
               className="inline-flex items-center gap-2 text-[#7FD67F]/70 hover:text-[#7FD67F] text-sm transition-colors"
             >
               <span className="w-1 h-1 rounded-full bg-[#7FD67F]" />
-              contact@psitta.ai
+              jmhanmu@gmail.com
             </a>
           </div>
 
@@ -94,7 +94,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-white/25 text-xs">
-            © 2026 Psitta (프시타쿠스 인텔리전스). All rights reserved.
+            © 2026 Psitta (프시타). All rights reserved.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-1">
             <span className="text-white/20 text-xs">사업자등록번호: 338-41-00999</span>

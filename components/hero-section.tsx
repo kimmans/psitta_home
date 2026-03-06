@@ -171,7 +171,7 @@ export default function HeroSection() {
           animate="visible"
           className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-[#7FD67F]/30 bg-[#7FD67F]/10"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#7FD67F] animate-pulse" />
+          <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
           <span className="text-[#7FD67F] text-sm font-medium tracking-wider">
             Psittacus Intelligence
           </span>
@@ -185,9 +185,9 @@ export default function HeroSection() {
           animate="visible"
           className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6"
         >
-          농업의 언어를
+          Supercharge your farm
           <br />
-          <span className="gradient-text">AI로 번역합니다</span>
+          <span className="gradient-text">with AI</span>
         </motion.h1>
 
         {/* Sub copy */}
@@ -198,7 +198,7 @@ export default function HeroSection() {
           animate="visible"
           className="text-lg sm:text-xl lg:text-2xl text-white/60 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Psitta는 데이터와 지능으로
+          Psitta는 인공지능과 교육으로
           <br className="hidden sm:block" />
           농업의 미래를 설계합니다
         </motion.p>
@@ -237,9 +237,10 @@ export default function HeroSection() {
           className="mt-16 flex flex-wrap gap-8 justify-center"
         >
           {[
-            { label: "사업 영역", value: "4" },
-            { label: "설립연도", value: "2024" },
-            { label: "주요 분야", value: "AI × 농업" },
+            { label: "-", value: "농업용 SLLM 모델 개발" },
+            { label: "-", value: "AI 스마트팜 키트 & 교육" },
+            { label: "-", value: "데이터 분석 & 컨설팅" },
+            { label: "-", value: "계량분석 연구" },
           ].map((item) => (
             <div key={item.label} className="text-center">
               <div className="text-2xl font-bold text-[#7FD67F]">{item.value}</div>

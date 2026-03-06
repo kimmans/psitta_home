@@ -97,17 +97,17 @@ export default function AboutSection() {
               className="mt-8 space-y-3"
             >
               <div className="flex items-start gap-4">
-                <span className="text-[#7FD67F] font-bold text-lg mt-0.5">Psitt—</span>
+                <span className="text-[#7FD67F] font-bold text-lg mt-0.5">Psittacus</span>
                 <div>
-                  <p className="text-[#0D1B2A] font-semibold text-sm">라틴어 어원</p>
-                  <p className="text-[#1C1C1E]/60 text-sm">Psittacus — 앵무새의 학명</p>
+                  <p className="text-[#0D1B2A] font-semibold text-sm">Large Language Model</p>
+                  <p className="text-[#1C1C1E]/60 text-sm">Stochastic Parrot</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-[#0D1B2A] font-bold text-lg mt-0.5">—acus</span>
+                <span className="text-[#0D1B2A] font-bold text-lg mt-0.5">Intelligence</span>
                 <div>
-                  <p className="text-[#0D1B2A] font-semibold text-sm">지능의 상징</p>
-                  <p className="text-[#1C1C1E]/60 text-sm">패턴 인식 · 학습 · 번역</p>
+                  <p className="text-[#0D1B2A] font-semibold text-sm">Artificial Intelligence</p>
+                  <p className="text-[#1C1C1E]/60 text-sm">Learning</p>
                 </div>
               </div>
             </motion.div>
@@ -150,20 +150,18 @@ export default function AboutSection() {
                 {" "}— 앵무새의 학명 — 에서 왔습니다.
               </p>
               <p className="mt-4 text-[#1C1C1E]/80 text-base lg:text-lg leading-relaxed">
-                앵무새가 수천 년간 인간의 언어를 학습하고 패턴을 인식했듯,
-                프시타는{" "}
-                <span className="font-semibold text-[#0D1B2A]">농업 데이터의 패턴을 학습</span>
-                하고 현장의 언어로{" "}
-                <span className="font-semibold text-[#7FD67F]">번역</span>
-                합니다.
+                확률적 앵무새는 거대언어모델(LLM)을 달리 부르는 이름입니다.
+                프시타는 스마트팜 데이터를 기반으로 {" "}
+                <span className="font-semibold text-[#0D1B2A]">농업 LLM 모델을 개발</span>
+                하고 직접체험을 통해 <span className="font-semibold text-[#7FD67F]">지식을 미래로 전달</span>합니다.
               </p>
             </blockquote>
 
             {/* Vision cards */}
             <div className="grid grid-cols-2 gap-4 pt-2">
               {[
-                { label: "미션", value: "농업 현장의 지식을\nAI로 체계화" },
-                { label: "비전", value: "데이터 기반 농업의\n글로벌 표준" },
+                { label: "미션", value: "AI와 교육을 통한 \n지속가능한 농업 실현" },
+                { label: "비전", value: "데이터 기반 농업의\n확산과 세대 전환" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -185,7 +183,7 @@ export default function AboutSection() {
                 주요 대상
               </p>
               <div className="flex flex-wrap gap-2">
-                {["농업 관계자", "교육기관", "정부/지자체", "연구기관", "투자자"].map((tag) => (
+                {["농업 관계자", "교육기관", "정부/지자체", "연구기관"].map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1 rounded-full text-sm bg-[#0D1B2A]/5 text-[#0D1B2A] font-medium"
