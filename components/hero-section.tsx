@@ -241,8 +241,8 @@ export default function HeroSection() {
             { label: "-", value: "AI 스마트팜 키트 & 교육" },
             { label: "-", value: "데이터 분석 & 컨설팅" },
             { label: "-", value: "계량분석 연구" },
-          ].map((item) => (
-            <div key={item.label} className="text-center">
+          ].map((item, i) => (
+            <div key={i} className="text-center">
               <div className="text-2xl font-bold text-[#7FD67F]">{item.value}</div>
               <div className="text-xs text-white/40 mt-1 tracking-wide">{item.label}</div>
             </div>
