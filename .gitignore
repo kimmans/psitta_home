@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local reference material (awards media originals — not used by the build)
+/content/refer/
+
+# tooling state
+/.omc/

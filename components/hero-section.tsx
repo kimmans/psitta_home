@@ -237,9 +237,9 @@ export default function HeroSection() {
           className="mt-16 flex flex-wrap gap-8 justify-center"
         >
           {[
-            { label: "-", value: "농업용 Vision Model 개발" },
-            { label: "-", value: "AI 스마트팜 키트 & 교육" },
-            { label: "-", value: "데이터 분석 & 컨설팅" }
+            { label: "-", value: "딸기 병해충 인식·처방" },
+            { label: "-", value: "온톨로지 농장 의사결정" },
+            { label: "-", value: "농업교육 AI툴 psitta.app" }
           ].map((item, i) => (
             <div key={i} className="text-center">
               <div className="text-2xl font-bold text-[#7FD67F]">{item.value}</div>

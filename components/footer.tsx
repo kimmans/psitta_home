@@ -9,17 +9,16 @@ const navSections = [
     links: [
       { label: "About", href: "#about" },
       { label: "Services", href: "#services" },
-      { label: "Research", href: "#research" },
+      { label: "Awards", href: "#awards" },
       { label: "Contact", href: "#contact" },
     ],
   },
   {
     title: "서비스",
     links: [
-      { label: "농업용 AI 모델 개발", href: "#services" },
-      { label: "AI 스마트팜 키트 & 교육", href: "#services" },
-      { label: "데이터 분석 & 컨설팅", href: "#services" },
-      { label: "계량분석 연구", href: "#services" },
+      { label: "딸기 병해충 인식 및 처방 서비스", href: "#services" },
+      { label: "온톨로지 기반 농장 의사결정 서비스", href: "#services" },
+      { label: "농업교육용 AI툴 psitta.app", href: "#services" },
     ],
   },
 ];

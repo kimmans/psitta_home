@@ -2,41 +2,36 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Brain, Cpu, BarChart3, FlaskConical, ArrowUpRight } from "lucide-react";
+import { ScanEye, Network, GraduationCap, ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
-    icon: Brain,
-    title: "농업용 AI 모델 개발",
+    icon: ScanEye,
+    title: "딸기 병해충 인식 및 처방 서비스",
     description:
-      "작물 생육 예측, 병해 진단, 수확량 최적화를 위한 맞춤형 AI 솔루션을 개발합니다.",
-    tag: "AI Development",
-    highlights: ["생육 예측 모델", "병해 진단 AI", "수확량 최적화"],
+      "사진 한 장으로 딸기의 병해충을 판별하고, 상황에 맞는 방제·처방 정보를 제공합니다.",
+    tag: "Vision AI",
+    highlights: ["병해충 이미지 진단", "방제 처방 추천", "현장 즉시 활용"],
+    footer: "자세히 보기",
   },
   {
-    icon: Cpu,
-    title: "AI 스마트팜 키트 & 교육",
+    icon: Network,
+    title: "온톨로지 기반 농장 의사결정 서비스",
     description:
-      "IoT 센서 기반 스마트팜 키트 제작 및 초·중등 방과후 교육 프로그램을 운영합니다.",
+      "재배 지식과 농장 데이터를 온톨로지로 구조화해 농장의 의사결정을 지원합니다.",
+    tag: "Knowledge AI",
+    highlights: ["농업 지식 온톨로지", "환경·생육 데이터 연계", "의사결정 지원"],
+    footer: "자세히 보기",
+  },
+  {
+    icon: GraduationCap,
+    title: "농업교육용 AI툴 psitta.app",
+    description:
+      "학교와 교육기관에서 바로 활용할 수 있는 농업 AI 실습 도구를 웹으로 제공합니다.",
     tag: "EdTech",
-    highlights: ["IoT 센서 키트", "방과후 교육", "직업훈련 프로그램"],
-  },
-  {
-    icon: BarChart3,
-    title: "데이터 분석 & 컨설팅",
-    description:
-      "농업 현장 데이터 수집·분석·시각화 및 의사결정 지원 컨설팅 서비스를 제공합니다.",
-    tag: "Consulting",
-    highlights: ["데이터 수집·분석", "시각화 대시보드", "의사결정 지원"],
-  },
-  {
-    icon: FlaskConical,
-    title: "계량분석 연구",
-    description:
-      "CVM, 헤도닉 가격분석, WTP 추정 등 농업경제학 기반 정책·시장 연구를 수행합니다.",
-    tag: "Research",
-    highlights: ["CVM 분석", "헤도닉 가격분석", "WTP 추정"],
+    highlights: ["웹 기반 실습 도구", "초·중등 방과후 교육", "직업훈련 프로그램"],
+    footer: "psitta.app",
   },
 ];
 
@@ -88,7 +83,7 @@ export default function ServicesSection() {
             <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight">
               농업과 AI의 만남,
               <br />
-              <span className="text-[#7FD67F]">4가지 방식으로</span>
+              <span className="text-[#7FD67F]">3가지 방식으로</span>
             </h2>
           </motion.div>
           <motion.p
@@ -97,14 +92,14 @@ export default function ServicesSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-white/50 max-w-sm lg:text-right text-base leading-relaxed"
           >
-            데이터 수집부터 모델 개발, 교육, 연구까지
+            병해충 진단부터 농장 의사결정, 교육까지
             <br />
-            농업 가치사슬 전반을 지원합니다.
+            농업 현장에 바로 닿는 AI를 만듭니다.
           </motion.p>
         </div>
 
         {/* Cards grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
@@ -163,7 +158,7 @@ export default function ServicesSection() {
 
                     {/* Footer link */}
                     <div className="pt-2 border-t border-white/8 flex items-center justify-between">
-                      <span className="text-xs text-white/30">자세히 보기</span>
+                      <span className="text-xs text-white/30">{service.footer}</span>
                       <div className="w-7 h-7 rounded-full bg-white/5 group-hover:bg-[#7FD67F]/20 flex items-center justify-center transition-colors">
                         <ArrowUpRight size={14} className="text-white/30 group-hover:text-[#7FD67F] transition-colors" />
                       </div>
