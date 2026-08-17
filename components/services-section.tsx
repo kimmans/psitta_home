@@ -2,26 +2,26 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ScanEye, Network, GraduationCap, ArrowUpRight } from "lucide-react";
+import { ScanEye, LayoutDashboard, GraduationCap, ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
     icon: ScanEye,
-    title: "딸기 병해충 인식 및 처방 서비스",
+    title: "딸기 병해충 AI 인식·처방 시스템 PsittaScan",
     description:
       "사진 한 장으로 딸기의 병해충을 판별하고, 상황에 맞는 방제·처방 정보를 제공합니다.",
     tag: "Vision AI",
     highlights: ["병해충 이미지 진단", "방제 처방 추천", "현장 즉시 활용"],
-    footer: "자세히 보기",
+    footer: "PsittaScan",
   },
   {
-    icon: Network,
-    title: "온톨로지 기반 농장 의사결정 서비스",
+    icon: LayoutDashboard,
+    title: "농장 맞춤형 생산관리 AI-ERP 구축",
     description:
-      "재배 지식과 농장 데이터를 온톨로지로 구조화해 농장의 의사결정을 지원합니다.",
-    tag: "Knowledge AI",
-    highlights: ["농업 지식 온톨로지", "환경·생육 데이터 연계", "의사결정 지원"],
+      "농장마다 다른 재배 방식과 데이터를 반영해 생육·작업·출하를 한 흐름으로 관리하는 AI-ERP를 구축합니다.",
+    tag: "Farm ERP",
+    highlights: ["농장별 맞춤 설계", "생육·작업·출하 관리", "온톨로지 기반 의사결정"],
     footer: "자세히 보기",
   },
   {
@@ -92,7 +92,7 @@ export default function ServicesSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-white/50 max-w-sm lg:text-right text-base leading-relaxed"
           >
-            병해충 진단부터 농장 의사결정, 교육까지
+            병해충 진단부터 농장 생산관리, 교육까지
             <br />
             농업 현장에 바로 닿는 AI를 만듭니다.
           </motion.p>

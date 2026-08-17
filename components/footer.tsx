@@ -16,8 +16,8 @@ const navSections = [
   {
     title: "서비스",
     links: [
-      { label: "딸기 병해충 인식 및 처방 서비스", href: "#services" },
-      { label: "온톨로지 기반 농장 의사결정 서비스", href: "#services" },
+      { label: "딸기 병해충 AI 인식·처방 PsittaScan", href: "#services" },
+      { label: "농장 맞춤형 생산관리 AI-ERP", href: "#services" },
       { label: "농업교육용 AI툴 psitta.app", href: "#services" },
     ],
   },

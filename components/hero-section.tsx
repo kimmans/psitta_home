@@ -237,8 +237,8 @@ export default function HeroSection() {
           className="mt-16 flex flex-wrap gap-8 justify-center"
         >
           {[
-            { label: "-", value: "딸기 병해충 인식·처방" },
-            { label: "-", value: "온톨로지 농장 의사결정" },
+            { label: "-", value: "PsittaScan 병해충 인식·처방" },
+            { label: "-", value: "농장 맞춤 생산관리 AI-ERP" },
             { label: "-", value: "농업교육 AI툴 psitta.app" }
           ].map((item, i) => (
             <div key={i} className="text-center">
