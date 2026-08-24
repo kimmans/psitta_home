@@ -187,7 +187,7 @@ export default function HeroSection() {
         >
           Supercharge your data
           <br />
-          <span className="gradient-text">with AI</span>
+          <span className="gradient-text">with FDE</span>
         </motion.h1>
 
         {/* Sub copy */}
