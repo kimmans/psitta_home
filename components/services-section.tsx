@@ -81,9 +81,9 @@ export default function ServicesSection() {
             transition={{ delay: 0.1, duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight">
-              농업과 AI의 만남,
+              도메인 데이터 기반
               <br />
-              <span className="text-[#7FD67F]">3가지 방식으로</span>
+              <span className="text-[#7FD67F]">AI 서비스 구축</span>
             </h2>
           </motion.div>
           <motion.p
@@ -92,9 +92,9 @@ export default function ServicesSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-white/50 max-w-sm lg:text-right text-base leading-relaxed"
           >
-            병해충 진단부터 농장 생산관리, 교육까지
+            전문 FDE 파견을 통해
             <br />
-            농업 현장에 바로 닿는 AI를 만듭니다.
+            당신의 데이터에 맞는 맞춤형 AI를 설계합니다.
           </motion.p>
         </div>
 
