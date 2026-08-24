@@ -185,7 +185,7 @@ export default function HeroSection() {
           animate="visible"
           className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6"
         >
-          Supercharge your farm
+          Supercharge your data
           <br />
           <span className="gradient-text">with AI</span>
         </motion.h1>
@@ -198,9 +198,9 @@ export default function HeroSection() {
           animate="visible"
           className="text-lg sm:text-xl lg:text-2xl text-white/60 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Psitta는 AI와 교육으로{" "}
+          Psitta는 AI와 DATA로{" "}
           <br className="hidden sm:block" />
-          농업의 미래를 설계합니다
+          미래를 설계합니다
         </motion.p>
 
         {/* CTA */}
