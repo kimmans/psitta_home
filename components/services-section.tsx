@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import {
   ScanEye,
   Warehouse,
@@ -85,9 +85,54 @@ const cardVariants = {
   }),
 };
 
+/* FDE panel — the cards finish around 0.9s, so the panel picks up from there. */
+const FDE_START = 0.45;
+
+const fdePanel = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: FDE_START, duration: 0.7, ease: easing },
+  },
+};
+
+const fdeLine = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: FDE_START + 0.18 + i * 0.1, duration: 0.55, ease: easing },
+  }),
+};
+
+const fdeTrait = {
+  hidden: { opacity: 0, x: 28 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: FDE_START + 0.34 + i * 0.14, duration: 0.55, ease: easing },
+  }),
+};
+
+const fdeIcon = {
+  hidden: { scale: 0.4, opacity: 0 },
+  visible: (i: number) => ({
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: FDE_START + 0.42 + i * 0.14,
+      type: "spring" as const,
+      stiffness: 320,
+      damping: 18,
+    },
+  }),
+};
+
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
@@ -211,56 +256,123 @@ export default function ServicesSection() {
 
         {/* What is FDE */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.7 }}
+          variants={fdePanel}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
           className="mt-16 relative rounded-3xl border border-white/8 overflow-hidden"
           style={{ background: "rgba(255,255,255,0.03)" }}
         >
-          <div
+          {/* Ambient glow — slow breathing loop */}
+          <motion.div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at 12% 0%, rgba(127,214,127,0.08) 0%, transparent 70%)",
+                "radial-gradient(ellipse 60% 80% at 12% 0%, rgba(127,214,127,0.10) 0%, transparent 70%)",
             }}
+            animate={reduceMotion ? { opacity: 0.85 } : { opacity: [0.5, 1, 0.5] }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: 7, repeat: Infinity, ease: "easeInOut" }
+            }
           />
 
           <div className="relative p-8 lg:p-12">
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-8 h-0.5 bg-[#7FD67F]" />
+              <motion.span
+                className="w-8 h-0.5 bg-[#7FD67F] origin-left"
+                initial={{ scaleX: 0 }}
+                animate={inView ? { scaleX: 1 } : {}}
+                transition={{ delay: FDE_START + 0.1, duration: 0.5, ease: easing }}
+              />
               <span className="text-[#7FD67F] text-xs font-semibold tracking-[0.2em] uppercase">
                 What is FDE
               </span>
+              <motion.span
+                className="w-1.5 h-1.5 rounded-full bg-[#7FD67F]"
+                animate={
+                  reduceMotion
+                    ? { opacity: 1 }
+                    : { opacity: [1, 0.25, 1], scale: [1, 0.8, 1] }
+                }
+                transition={
+                  reduceMotion
+                    ? { duration: 0 }
+                    : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
+                }
+              />
             </div>
 
             <div className="grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-8 lg:gap-14">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-white leading-tight mb-4">
-                  Forward Deployed Engineer
-                  <br />
-                  <span className="text-[#7FD67F]">전방 배치 엔지니어</span>
+                  <motion.span
+                    custom={0}
+                    variants={fdeLine}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    className="block"
+                  >
+                    Forward Deployed Engineer
+                  </motion.span>
+                  <motion.span
+                    custom={1}
+                    variants={fdeLine}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    className="block text-[#7FD67F]"
+                  >
+                    전방 배치 엔지니어
+                  </motion.span>
                 </h3>
-                <p className="text-white/60 text-base leading-relaxed mb-4">
+                <motion.p
+                  custom={2}
+                  variants={fdeLine}
+                  initial="hidden"
+                  animate={inView ? "visible" : "hidden"}
+                  className="text-white/60 text-base leading-relaxed mb-4"
+                >
                   고객사 현장에 직접 들어가 상주하면서, 그들의 비즈니스 문제를
                   기술로 해결하는 엔지니어를 말합니다.
-                </p>
-                <p className="text-white/40 text-sm leading-relaxed">
+                </motion.p>
+                <motion.p
+                  custom={3}
+                  variants={fdeLine}
+                  initial="hidden"
+                  animate={inView ? "visible" : "hidden"}
+                  className="text-white/40 text-sm leading-relaxed"
+                >
                   팔란티어(Palantir)가 CIA·미 국방부 프로젝트에서 만들어낸
                   역할이고, 지금은 OpenAI를 비롯한 AI 기업들이 같은 방식으로
                   일합니다. 표준 제품을 파는 대신 한 고객의 문제에 맞는 것을
                   만들기 때문에, 역할은 개발자보다{" "}
                   <span className="text-white/70">스타트업 CTO</span>에 가깝습니다.
-                </p>
+                </motion.p>
               </div>
 
               <div className="space-y-5">
-                {fdeTraits.map((trait) => {
+                {fdeTraits.map((trait, i) => {
                   const Icon = trait.icon;
                   return (
-                    <div key={trait.title} className="flex gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#7FD67F]/15 flex items-center justify-center flex-shrink-0">
+                    <motion.div
+                      key={trait.title}
+                      custom={i}
+                      variants={fdeTrait}
+                      initial="hidden"
+                      animate={inView ? "visible" : "hidden"}
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 320, damping: 22 }}
+                      className="flex gap-4 group cursor-default"
+                    >
+                      <motion.div
+                        custom={i}
+                        variants={fdeIcon}
+                        initial="hidden"
+                        animate={inView ? "visible" : "hidden"}
+                        className="w-10 h-10 rounded-xl bg-[#7FD67F]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#7FD67F]/30 transition-colors"
+                      >
                         <Icon className="text-[#7FD67F]" size={18} />
-                      </div>
+                      </motion.div>
                       <div className="space-y-1">
                         <h4 className="text-white font-semibold text-base leading-snug">
                           {trait.title}
@@ -269,7 +381,7 @@ export default function ServicesSection() {
                           {trait.description}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
