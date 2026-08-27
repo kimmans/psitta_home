@@ -160,8 +160,8 @@ export default function AboutSection() {
             {/* Vision cards */}
             <div className="grid grid-cols-2 gap-4 pt-2">
               {[
-                { label: "미션", value: "AI와 교육을 통한 \n지속가능한 농업 실현" },
-                { label: "비전", value: "데이터 기반 농업의\n확산과 세대 전환" },
+                { label: "미션", value: "현장의 말을 데이터로,\n데이터를 판단으로" },
+                { label: "비전", value: "산업 현장의 암묵지를\n미래 세대를 위한\n데이터 자산으로" },
               ].map((item) => (
                 <div
                   key={item.label}
