@@ -2,7 +2,16 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ScanEye, Warehouse, Network, GraduationCap, ArrowUpRight } from "lucide-react";
+import {
+  ScanEye,
+  Warehouse,
+  Network,
+  GraduationCap,
+  ArrowUpRight,
+  MapPin,
+  Layers,
+  Code2,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
@@ -44,13 +53,24 @@ const services = [
   },
 ];
 
-const deliveries = [
+const fdeTraits = [
   {
-    title: "AI 기반 농업 컨설팅 지원 시스템",
+    icon: MapPin,
+    title: "현장에 상주합니다",
     description:
-      "농장 데이터를 근거로 컨설팅 판단을 지원하는 시스템을 개발·납품했습니다.",
-    client: "농업 컨설팅 기업 납품",
-    year: "2026",
+      "고객사에 직접 파견되어 몇 개월에서 몇 년간 함께 일하며, 비즈니스 문제를 기술로 풉니다.",
+  },
+  {
+    icon: Layers,
+    title: "한 고객에게 깊게 들어갑니다",
+    description:
+      "기능 하나를 100개 고객에게 파는 대신, 한 고객의 문제에 필요한 모든 것을 만듭니다.",
+  },
+  {
+    icon: Code2,
+    title: "조언하지 않고 직접 만듭니다",
+    description:
+      "컨설턴트는 조언하고 떠나지만, FDE는 직접 코딩하고 끝까지 책임집니다.",
   },
 ];
 
@@ -189,43 +209,71 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* Delivered work */}
+        {/* What is FDE */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-16"
+          transition={{ delay: 0.5, duration: 0.7 }}
+          className="mt-16 relative rounded-3xl border border-white/8 overflow-hidden"
+          style={{ background: "rgba(255,255,255,0.03)" }}
         >
-          <div className="flex items-center gap-3 mb-6">
-            <span className="w-6 h-px bg-white/20" />
-            <span className="text-white/40 text-xs font-semibold tracking-[0.15em] uppercase">
-              납품 실적
-            </span>
-          </div>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 80% at 12% 0%, rgba(127,214,127,0.08) 0%, transparent 70%)",
+            }}
+          />
 
-          <div className="space-y-4">
-            {deliveries.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-6 rounded-2xl border border-white/8"
-                style={{ background: "rgba(255,255,255,0.03)" }}
-              >
-                <div className="space-y-1.5">
-                  <h3 className="text-white font-semibold text-base lg:text-lg leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-white/50 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7FD67F]" />
-                  <span className="text-[#7FD67F]/70 text-xs font-medium tracking-wide whitespace-nowrap">
-                    {item.client} · {item.year}
-                  </span>
-                </div>
+          <div className="relative p-8 lg:p-12">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-0.5 bg-[#7FD67F]" />
+              <span className="text-[#7FD67F] text-xs font-semibold tracking-[0.2em] uppercase">
+                What is FDE
+              </span>
+            </div>
+
+            <div className="grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-8 lg:gap-14">
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-white leading-tight mb-4">
+                  Forward Deployed Engineer
+                  <br />
+                  <span className="text-[#7FD67F]">전방 배치 엔지니어</span>
+                </h3>
+                <p className="text-white/60 text-base leading-relaxed mb-4">
+                  고객사 현장에 직접 들어가 상주하면서, 그들의 비즈니스 문제를
+                  기술로 해결하는 엔지니어를 말합니다.
+                </p>
+                <p className="text-white/40 text-sm leading-relaxed">
+                  팔란티어(Palantir)가 CIA·미 국방부 프로젝트에서 만들어낸
+                  역할이고, 지금은 OpenAI를 비롯한 AI 기업들이 같은 방식으로
+                  일합니다. 표준 제품을 파는 대신 한 고객의 문제에 맞는 것을
+                  만들기 때문에, 역할은 개발자보다{" "}
+                  <span className="text-white/70">스타트업 CTO</span>에 가깝습니다.
+                </p>
               </div>
-            ))}
+
+              <div className="space-y-5">
+                {fdeTraits.map((trait) => {
+                  const Icon = trait.icon;
+                  return (
+                    <div key={trait.title} className="flex gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-[#7FD67F]/15 flex items-center justify-center flex-shrink-0">
+                        <Icon className="text-[#7FD67F]" size={18} />
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="text-white font-semibold text-base leading-snug">
+                          {trait.title}
+                        </h4>
+                        <p className="text-white/50 text-sm leading-relaxed">
+                          {trait.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
