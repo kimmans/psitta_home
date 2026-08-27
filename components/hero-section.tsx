@@ -234,15 +234,16 @@ export default function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-16 flex flex-wrap gap-8 justify-center"
+          className="mt-16 flex flex-wrap gap-x-8 gap-y-6 justify-center"
         >
           {[
-            { label: "-", value: "PsittaScan 병해충 인식·처방" },
-            { label: "-", value: "농장 맞춤 생산관리 AI-ERP" },
-            { label: "-", value: "농업교육 AI툴 psitta.app" }
+            { label: "Livestock AI", value: "지능형 양계 농장 관리" },
+            { label: "Vision AI", value: "PsittaScan 병해충 진단" },
+            { label: "Data Engineering", value: "FDE 온톨로지 구축" },
+            { label: "EdTech", value: "AI 교육 · 품질 컨설팅" }
           ].map((item, i) => (
             <div key={i} className="text-center">
-              <div className="text-2xl font-bold text-[#7FD67F]">{item.value}</div>
+              <div className="text-lg lg:text-xl font-bold text-[#7FD67F]">{item.value}</div>
               <div className="text-xs text-white/40 mt-1 tracking-wide">{item.label}</div>
             </div>
           ))}

@@ -2,35 +2,44 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ScanEye, LayoutDashboard, GraduationCap, ArrowUpRight } from "lucide-react";
+import { ScanEye, Warehouse, Network, GraduationCap, ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
-    icon: ScanEye,
-    title: "딸기 병해충 AI 인식·처방 시스템 PsittaScan",
+    icon: Warehouse,
+    title: "지능형 양계 농장 관리 시스템",
     description:
-      "사진 한 장으로 딸기의 병해충을 판별하고, 상황에 맞는 방제·처방 정보를 제공합니다.",
-    tag: "Vision AI",
-    highlights: ["병해충 이미지 진단", "방제 처방 추천", "현장 즉시 활용"],
-    footer: "PsittaScan",
+      "현장에서 모국어 음성으로 말하면 생산·폐사·출하가 기록되고, 입고부터 출하까지 하나의 로트(LOT)로 이어집니다.",
+    tag: "Livestock AI",
+    highlights: ["STT 음성 입력", "LOT 이력 자동 연결", "HACCP·이력제 서식 자동화"],
+    footer: "사업영역 01",
   },
   {
-    icon: LayoutDashboard,
-    title: "농장 맞춤형 생산관리 AI-ERP 구축",
+    icon: ScanEye,
+    title: "시설작물 병해충 진단 PsittaScan",
     description:
-      "농장마다 다른 재배 방식과 데이터를 반영해 생육·작업·출하를 한 흐름으로 관리하는 AI-ERP를 구축합니다.",
-    tag: "Farm ERP",
-    highlights: ["농장별 맞춤 설계", "생육·작업·출하 관리", "온톨로지 기반 의사결정"],
-    footer: "자세히 보기",
+      "사진 한 장으로 잎과 열매를 동시에 판독해 병해충을 진단하고, 농진청 공식 매뉴얼에 따른 방제 처방까지 안내합니다.",
+    tag: "Vision AI",
+    highlights: ["병해충 이미지 진단", "숙성도·출하등급 판정", "농사로 농약정보 연동"],
+    footer: "사업영역 02",
+  },
+  {
+    icon: Network,
+    title: "FDE 맞춤형 온톨로지 구축",
+    description:
+      "전문 FDE가 현장에 들어가 고객의 데이터와 암묵지를 AI가 읽을 수 있는 구조로 재설계합니다.",
+    tag: "Data Engineering",
+    highlights: ["고객 데이터 정제·통합", "도메인 온톨로지 설계", "설명 가능한 의사결정"],
+    footer: "사업영역 03",
   },
   {
     icon: GraduationCap,
-    title: "농업교육용 AI툴 psitta.app",
+    title: "AI 리터러시 교육 · 품질 컨설팅",
     description:
-      "학교와 교육기관에서 바로 활용할 수 있는 농업 AI 실습 도구를 웹으로 제공합니다.",
+      "현장 종사자가 직접 다뤄보는 실습형 AI 교육과, 구축된 AI 모델의 품질을 점검하는 컨설팅을 제공합니다.",
     tag: "EdTech",
-    highlights: ["웹 기반 실습 도구", "초·중등 방과후 교육", "직업훈련 프로그램"],
+    highlights: ["실습형 AI 교육", "psitta.app 웹 실습 도구", "AI 모델 품질 컨설팅"],
     footer: "psitta.app",
   },
 ];
@@ -92,14 +101,14 @@ export default function ServicesSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-white/50 max-w-sm lg:text-right text-base leading-relaxed"
           >
-            전문 FDE 파견을 통해
+            양계·시설원예 현장에 전문 FDE가 직접 들어가
             <br />
             당신의 데이터에 맞는 맞춤형 AI를 설계합니다.
           </motion.p>
         </div>
 
         {/* Cards grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (

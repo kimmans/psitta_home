@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "프시타(Psitta) — 농업 AI 솔루션 & 스마트팜 교육",
+  title: "프시타(Psitta) — 농축산 AI 솔루션 & AI 리터러시 교육",
   description:
-    "딸기 병해충 AI 인식·처방 시스템 PsittaScan, 농장 맞춤형 생산관리 AI-ERP 구축, 농업교육용 AI툴 psitta.app. 프시타쿠스 인텔리전스.",
-  keywords: ["농업AI", "스마트팜", "딸기 병해충", "PsittaScan", "농장 AI-ERP", "농업 온톨로지", "농업 교육 AI", "psitta.app"],
+    "지능형 양계 농장 관리 시스템, 시설작물 병해충 진단 PsittaScan, FDE 맞춤형 온톨로지 구축, AI 리터러시 교육·모델 품질 컨설팅. 프시타(Psittacus Intelligence).",
+  keywords: ["농업AI", "축산AI", "양계 농장 관리 시스템", "스마트팜", "시설작물 병해충 진단", "PsittaScan", "FDE", "농업 온톨로지", "AI 리터러시 교육", "AI 모델 품질 컨설팅", "psitta.app"],
   openGraph: {
-    title: "프시타(Psitta) — 농업 AI 솔루션 & 스마트팜 교육",
+    title: "프시타(Psitta) — 농축산 AI 솔루션 & AI 리터러시 교육",
     description:
-      "딸기 병해충 AI 인식·처방 시스템 PsittaScan, 농장 맞춤형 생산관리 AI-ERP 구축, 농업교육용 AI툴 psitta.app. 프시타쿠스 인텔리전스.",
+      "지능형 양계 농장 관리 시스템, 시설작물 병해충 진단 PsittaScan, FDE 맞춤형 온톨로지 구축, AI 리터러시 교육·모델 품질 컨설팅. 프시타(Psittacus Intelligence).",
     type: "website",
     locale: "ko_KR",
   },

@@ -44,14 +44,15 @@ export default function ContactSection() {
               <span className="text-[#7FD67F]">농업의 미래</span>
             </h2>
             <p className="text-white/55 text-base lg:text-lg leading-relaxed mb-12">
-              농업 AI, 스마트팜 교육, 강의, 연구 협력 등
+              양계·시설원예 농장 관리 AI, 병해충 진단, FDE 온톨로지 구축,
+              AI 리터러시 교육과 모델 품질 컨설팅까지
               어떤 주제든 편하게 문의해 주세요.
             </p>
 
             {/* Contact details */}
             <div className="space-y-6">
               <a
-                href="mailto:contact@psitta.ai"
+                href="mailto:psitta.ai@gmail.com"
                 className="flex items-start gap-4 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#7FD67F]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#7FD67F]/25 transition-colors">
@@ -60,7 +61,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-white/40 text-xs font-medium tracking-wide mb-0.5">이메일</p>
                   <p className="text-white font-medium group-hover:text-[#7FD67F] transition-colors">
-                    jmhanmu@gmail.com
+                    psitta.ai@gmail.com
                   </p>
                 </div>
               </a>
@@ -72,7 +73,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-white/40 text-xs font-medium tracking-wide mb-0.5">주소</p>
                   <p className="text-white font-medium">
-                    서울특별시 영등포구 양평동
+                    서울특별시 영등포구 영등포로11길 9, 8층 809호
                   </p>
                 </div>
               </div>
@@ -84,7 +85,9 @@ export default function ContactSection() {
                 <div>
                   <p className="text-white/40 text-xs font-medium tracking-wide mb-0.5">사업자번호</p>
                   <p className="text-white font-medium">338-41-00999</p>
-                  <p className="text-white/40 text-xs mt-0.5">프시타(Psitta)</p>
+                  <p className="text-white/40 text-xs mt-0.5">
+                    프시타(Psittacus Intelligence) · 대표 김진만
+                  </p>
                 </div>
               </div>
             </div>

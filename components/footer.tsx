@@ -16,9 +16,10 @@ const navSections = [
   {
     title: "서비스",
     links: [
-      { label: "딸기 병해충 AI 인식·처방 PsittaScan", href: "#services" },
-      { label: "농장 맞춤형 생산관리 AI-ERP", href: "#services" },
-      { label: "농업교육용 AI툴 psitta.app", href: "#services" },
+      { label: "지능형 양계 농장 관리 시스템", href: "#services" },
+      { label: "시설작물 병해충 진단 PsittaScan", href: "#services" },
+      { label: "FDE 맞춤형 온톨로지 구축", href: "#services" },
+      { label: "AI 리터러시 교육 · 품질 컨설팅", href: "#services" },
     ],
   },
 ];
@@ -46,8 +47,8 @@ export default function Footer() {
               <span className="text-white font-bold text-xl tracking-tight">Psitta</span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              농업, AI, 교육<br />
-              AI와 교육으로 농업의 미래를 설계합니다.
+              현장의 말을 데이터로,<br />
+              데이터를 판단으로.
             </p>
             <p className="text-white/25 text-xs">
               Psittacus Intelligence Co., Ltd.
@@ -55,11 +56,11 @@ export default function Footer() {
 
             {/* Social / contact link */}
             <a
-              href="mailto:jmhanmu@gmail.com"
+              href="mailto:psitta.ai@gmail.com"
               className="inline-flex items-center gap-2 text-[#7FD67F]/70 hover:text-[#7FD67F] text-sm transition-colors"
             >
               <span className="w-1 h-1 rounded-full bg-[#7FD67F]" />
-              jmhanmu@gmail.com
+              psitta.ai@gmail.com
             </a>
           </div>
 
@@ -93,8 +94,9 @@ export default function Footer() {
             © 2026 Psitta (프시타). All rights reserved.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-1">
+            <span className="text-white/20 text-xs">대표 김진만</span>
             <span className="text-white/20 text-xs">사업자등록번호: 338-41-00999</span>
-            <span className="text-white/20 text-xs">서울특별시 영등포구 양평동</span>
+            <span className="text-white/20 text-xs">서울특별시 영등포구 영등포로11길 9, 8층 809호</span>
           </div>
         </div>
       </div>
