@@ -136,7 +136,7 @@ export default function AboutSection() {
                 <span className="text-[#7FD67F]">인텔리전스</span>
               </h2>
               <p className="text-[#1C1C1E]/50 text-sm font-medium tracking-wide">
-                Psittacus Intelligence Co., Ltd.
+                Psittacus Intelligence
               </p>
             </div>
 

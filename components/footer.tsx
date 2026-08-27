@@ -51,7 +51,7 @@ export default function Footer() {
               데이터를 판단으로.
             </p>
             <p className="text-white/25 text-xs">
-              Psittacus Intelligence Co., Ltd.
+              Psittacus Intelligence
             </p>
 
             {/* Social / contact link */}

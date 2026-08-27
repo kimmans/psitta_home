@@ -41,7 +41,7 @@ const timeline = [
     year: "2026",
     title: "서비스화: 현장에 닿는 AI",
     items: [
-      "**4월 30일** — 프시타(Psittacus Intelligence) 법인 설립",
+      "**4월 30일** — 프시타(Psittacus Intelligence) 개업",
       "PSITTA/프시타 상표출원 (9·41·42류)",
       "**PsittaScan v0.7** 공개 — GroundingDINO + SAM2 + Depth Anything V2 + Claude API 기반 과실 탐지·숙성도·병해 진단 통합 파이프라인",
       "**5월 30일** — **psitta.app** 출시, 학교·교육기관용 웹 기반 농업 AI 실습 도구",
