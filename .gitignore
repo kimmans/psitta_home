@@ -43,5 +43,11 @@ next-env.d.ts
 # local reference material (awards media originals — not used by the build)
 /content/refer/
 
+# internal documents — contain contract amounts, financials, client names.
+# never commit to this public repo. keep at repo root, out of /public.
+/*.pdf
+/*.pptx
+/*.xlsx
+
 # tooling state
 /.omc/
