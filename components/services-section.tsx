@@ -44,6 +44,16 @@ const services = [
   },
 ];
 
+const deliveries = [
+  {
+    title: "AI 기반 농업 컨설팅 지원 시스템",
+    description:
+      "농장 데이터를 근거로 컨설팅 판단을 지원하는 시스템을 개발·납품했습니다.",
+    client: "농업 컨설팅 기업 납품",
+    year: "2026",
+  },
+];
+
 const easing = [0.25, 0.46, 0.45, 0.94] as const;
 
 const cardVariants = {
@@ -101,7 +111,7 @@ export default function ServicesSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-white/50 max-w-sm lg:text-right text-base leading-relaxed"
           >
-            양계·시설원예 현장에 전문 FDE가 직접 들어가
+            고객 현장에 전문 FDE가 직접 들어가
             <br />
             당신의 데이터에 맞는 맞춤형 AI를 설계합니다.
           </motion.p>
@@ -178,6 +188,46 @@ export default function ServicesSection() {
             );
           })}
         </div>
+
+        {/* Delivered work */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-16"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-6 h-px bg-white/20" />
+            <span className="text-white/40 text-xs font-semibold tracking-[0.15em] uppercase">
+              납품 실적
+            </span>
+          </div>
+
+          <div className="space-y-4">
+            {deliveries.map((item) => (
+              <div
+                key={item.title}
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-6 rounded-2xl border border-white/8"
+                style={{ background: "rgba(255,255,255,0.03)" }}
+              >
+                <div className="space-y-1.5">
+                  <h3 className="text-white font-semibold text-base lg:text-lg leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/50 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7FD67F]" />
+                  <span className="text-[#7FD67F]/70 text-xs font-medium tracking-wide whitespace-nowrap">
+                    {item.client} · {item.year}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
