@@ -96,6 +96,7 @@
     @apply border-border outline-ring/50;
   }
   html {
+    position: relative;
     scroll-behavior: smooth;
   }
   body {
@@ -161,4 +162,65 @@
     background-clip: text;
     animation: shimmer 3s linear infinite;
   }
+}
+
+/* Image-led intelligence core hero. */
+.psitta-hero { position: relative; overflow: hidden; min-height: 100svh; color: white; background: #091712; }
+.psitta-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 78% 36%, #254a304d, transparent 58%), linear-gradient(115deg, #0d1b2a80, transparent 60%); pointer-events: none; }
+.psitta-hero-grid { position: absolute; inset: 0; opacity: .32; background-image: linear-gradient(#b7e8c00a 1px, transparent 1px), linear-gradient(90deg, #b7e8c00a 1px, transparent 1px); background-size: 88px 88px; mask-image: linear-gradient(black, transparent 85%); pointer-events: none; }
+.psitta-hero-inner { position: relative; max-width: 1280px; margin: auto; padding: 112px 32px 28px; min-height: 100svh; display: flex; flex-direction: column; }
+.psitta-hero-main { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; flex: 1; min-height: 580px; gap: 16px; }
+.psitta-hero-copy { position: relative; z-index: 2; padding-bottom: 32px; }
+.psitta-hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; color: #b1c8ba; font-size: 10px; font-weight: 500; letter-spacing: .22em; }
+.psitta-hero-eyebrow > span, .psitta-hero-art-label > span { height: 6px; width: 6px; border-radius: 50%; background: #a8e6a8; box-shadow: 0 0 12px #7fd67f66; }
+.psitta-hero-title { font-size: clamp(48px, 5.5vw, 78px); font-weight: 600; line-height: 1.04; letter-spacing: -.055em; }
+.psitta-hero-title-accent { display: block; color: #a8e6a8; margin-top: 7px; }
+.psitta-hero-description { color: #a9bab3; font-size: 16px; line-height: 1.9; margin: 28px 0 32px; letter-spacing: -.025em; }
+.psitta-hero-art { position: relative; min-width: 0; aspect-ratio: 1; perspective: 1000px; }
+.psitta-hero-halo { position: absolute; inset: 8%; background: radial-gradient(ellipse, #7fd67f20, transparent 68%); filter: blur(25px); }
+.psitta-hero-sculpture { position: absolute; inset: -2%; z-index: 1; }
+.psitta-hero-float { animation: intelligence-float 9s ease-in-out infinite; filter: drop-shadow(0 32px 30px #0004); }
+.psitta-hero-orbit { position: absolute; inset: 10%; border: 1px solid #a8e6a81a; border-radius: 50%; }
+.psitta-hero-orbit::after { content: ""; position: absolute; left: 15%; top: 13%; width: 5px; height: 5px; background: #a8e6a8; border-radius: 50%; box-shadow: 0 0 15px #a8e6a8; }
+.psitta-hero-orbit-one { transform: rotate(-28deg) scaleY(.62); animation: intelligence-orbit 28s linear infinite; }
+.psitta-hero-orbit-two { inset: 3%; transform: rotate(45deg) scaleY(.8); opacity: .5; }
+.psitta-hero-art-label { position: absolute; z-index: 2; top: 7%; right: 0; display: flex; gap: 8px; align-items: center; font-size: 8px; letter-spacing: .13em; color: #b1c8ba; }
+.psitta-hero-coordinate { position: absolute; bottom: 4%; right: 2%; font-family: monospace; font-size: 9px; letter-spacing: .12em; color: #a9bab380; }
+.psitta-hero-bottom { position: relative; z-index: 2; margin-top: 32px; }
+.psitta-hero-services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #ffffff24; }
+.psitta-hero-service { display: flex; position: relative; flex-direction: column; gap: 7px; padding: 24px 20px 24px 0; transition: color .2s; }
+.psitta-hero-service:hover { color: #a8e6a8; }
+.psitta-hero-service-number { font-family: monospace; color: #a8e6a8; font-size: 10px; margin-bottom: 5px; }
+.psitta-hero-service-label { font-size: 16px; font-weight: 500; letter-spacing: -.02em; }
+.psitta-hero-service-value { font-size: 12px; color: #a9bab3; }
+.psitta-hero-scroll { display: flex; align-items: center; gap: 10px; margin: 12px auto 0; font-size: 8px; letter-spacing: .18em; color: #a9bab3; cursor: pointer; padding: 10px; }
+.psitta-hero-scroll:hover { color: #a8e6a8; }
+.psitta-hero[data-active="false"] .psitta-hero-float, .psitta-hero[data-active="false"] .psitta-hero-orbit-one { animation-play-state: paused; }
+@keyframes intelligence-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-18px) rotate(3deg); } }
+@keyframes intelligence-orbit { from { transform: rotate(-28deg) scaleY(.62) rotate(0); } to { transform: rotate(-28deg) scaleY(.62) rotate(360deg); } }
+@media (max-width: 1023px) {
+  .psitta-hero-inner { padding-top: 120px; }
+  .psitta-hero-main { grid-template-columns: 1fr 1fr; min-height: 480px; }
+  .psitta-hero-title { font-size: clamp(42px, 6vw, 64px); }
+  .psitta-hero-art-label { font-size: 6px; }
+}
+@media (max-width: 767px) {
+  .psitta-hero-inner { padding: 110px 24px 20px; }
+  .psitta-hero-main { grid-template-columns: 1fr; gap: 0; min-height: auto; }
+  .psitta-hero-copy { padding-bottom: 0; }
+  .psitta-hero-title { font-size: clamp(43px, 10.8vw, 72px); }
+  .psitta-hero-eyebrow { margin-bottom: 24px; font-size: 9px; }
+  .psitta-hero-description { font-size: 14px; margin: 24px 0; }
+  .psitta-hero-art { margin: 16px auto 0; width: min(100%, 440px); }
+  .psitta-hero-art-label { top: 6%; font-size: 7px; }
+  .psitta-hero-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .psitta-hero-service { padding: 20px 8px 20px 0; }
+  .psitta-hero-service:nth-child(n+3) { border-top: 1px solid #ffffff14; }
+  .psitta-hero-service-label { font-size: 14px; }
+  .psitta-hero-service-value { font-size: 11px; }
+  .psitta-hero-bottom { margin-top: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .psitta-hero-float, .psitta-hero-orbit-one { animation: none; }
+  html { scroll-behavior: auto; }
 }

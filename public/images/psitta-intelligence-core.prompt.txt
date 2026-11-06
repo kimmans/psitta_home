@@ -1,0 +1,11 @@
+Generation: built-in image_gen tool. The tool does not expose a model selector; the exact underlying model version was not verified.
+Reference: user requested the mood of YouTube 52YD1lOc7kg at 3:53. The video could not be opened, so this is an original brand-based sample, not a verified recreation of that frame.
+Transparent background: true.
+
+Prompt:
+Create a premium 3D visual asset for the hero of PSITTA, a Korean AI and data engineering company's website. A sculptural abstract intelligence core: one continuous flowing toroidal knot made of thick optically clear smoked emerald glass with polished chrome inner surfaces, luminous pale lime green light refracting inside. Elegant biomorphic shape, sophisticated physically based product render, striking dimensional depth, beautiful glass caustics and subtle fine material detail. Three-quarter view, entire isolated sculpture centered in a square composition with generous 12% transparent padding all around. Sculpture takes 75 percent of image. Studio lighting, bright softbox highlights, restrained lime glow, dark forest-green shadows. Make it look spectacular against a very dark navy website. Genuine fully transparent background, no floor, no backdrop, no cast shadow outside object, no typography, no logo, no watermark, no UI, no extra objects. This will be layered on the website and gently floated and tilted with code. High end art direction, clean silhouette, not a generic tech globe.
+
+Files:
+psitta-intelligence-core.png: original with alpha.
+psitta-intelligence-core.webp: web asset, quality 88, alpha preserved.
+Motion: CSS floating and orbit, Framer Motion pointer tilt and scroll parallax; reduced-motion preference respected.
