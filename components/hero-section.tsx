@@ -44,7 +44,7 @@ export default function HeroSection() {
           <div className="psitta-hero-copy">
             <p className="psitta-hero-eyebrow"><span /> PSITTACUS INTELLIGENCE</p>
             <h1 className="psitta-hero-title">
-              Supercharge<br />your data<span className="psitta-hero-title-accent">with FDE<span className="text-white">.</span></span>
+              Activate<span className="psitta-hero-title-accent">your data</span>
             </h1>
             <p className="psitta-hero-description">
               데이터의 가능성을, 현실의 변화로.<br />

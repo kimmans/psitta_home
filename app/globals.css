@@ -169,7 +169,7 @@
 .psitta-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 78% 36%, #254a304d, transparent 58%), linear-gradient(115deg, #0d1b2a80, transparent 60%); pointer-events: none; }
 .psitta-hero-grid { position: absolute; inset: 0; opacity: .32; background-image: linear-gradient(#b7e8c00a 1px, transparent 1px), linear-gradient(90deg, #b7e8c00a 1px, transparent 1px); background-size: 88px 88px; mask-image: linear-gradient(black, transparent 85%); pointer-events: none; }
 .psitta-hero-inner { position: relative; max-width: 1280px; margin: auto; padding: 112px 32px 28px; min-height: 100svh; display: flex; flex-direction: column; }
-.psitta-hero-main { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; flex: 1; min-height: 580px; gap: 16px; }
+.psitta-hero-main { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; flex: 1; min-height: 580px; gap: 16px; }
 .psitta-hero-copy { position: relative; z-index: 2; padding-bottom: 32px; }
 .psitta-hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; color: #b1c8ba; font-size: 10px; font-weight: 500; letter-spacing: .22em; }
 .psitta-hero-eyebrow > span, .psitta-hero-art-label > span { height: 6px; width: 6px; border-radius: 50%; background: #a8e6a8; box-shadow: 0 0 12px #7fd67f66; }
@@ -178,7 +178,7 @@
 .psitta-hero-description { color: #a9bab3; font-size: 16px; line-height: 1.9; margin: 28px 0 32px; letter-spacing: -.025em; }
 .psitta-hero-art { position: relative; min-width: 0; aspect-ratio: 1; perspective: 1000px; }
 .psitta-hero-halo { position: absolute; inset: 8%; background: radial-gradient(ellipse, #7fd67f20, transparent 68%); filter: blur(25px); }
-.psitta-hero-sculpture { position: absolute; inset: -2%; z-index: 1; }
+.psitta-hero-sculpture { position: absolute; inset: -12%; z-index: 1; }
 .psitta-hero-float { animation: intelligence-float 9s ease-in-out infinite; filter: drop-shadow(0 32px 30px #0004); }
 .psitta-hero-orbit { position: absolute; inset: 10%; border: 1px solid #a8e6a81a; border-radius: 50%; }
 .psitta-hero-orbit::after { content: ""; position: absolute; left: 15%; top: 13%; width: 5px; height: 5px; background: #a8e6a8; border-radius: 50%; box-shadow: 0 0 15px #a8e6a8; }
@@ -212,6 +212,7 @@
   .psitta-hero-eyebrow { margin-bottom: 24px; font-size: 9px; }
   .psitta-hero-description { font-size: 14px; margin: 24px 0; }
   .psitta-hero-art { margin: 16px auto 0; width: min(100%, 440px); }
+  .psitta-hero-sculpture { inset: -8%; }
   .psitta-hero-art-label { top: 6%; font-size: 7px; }
   .psitta-hero-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .psitta-hero-service { padding: 20px 8px 20px 0; }
